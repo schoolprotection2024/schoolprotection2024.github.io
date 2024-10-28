@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Protection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Bienvenida -->
+    <section class="welcome-section" id="welcomeSection">
+        <h1>Bienvenidos a School Protection</h1>
+        <button onclick="showLogin()">Empezar</button>
+    </section>
+
+    <!-- Sección de Inicio de Sesión -->
+    <section class="login-section" id="loginSection" style="display: none;">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Nombre de usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button id="loginButton">Iniciar Sesión</button>
+        <p id="loginError" class="error-message"></p>
+    </section>
+
+    <!-- Página Principal -->
+    <section id="mainPage" class="main-page" style="display: none;">
+        <header>
+            <h1>School Protection</h1>
+        </header>
+        <div class="menu-icons">
+            <div class="icon" onclick="showPage('zonesPage')">🗺️<p>Zonas Peligrosas</p></div>
+            <div class="icon" onclick="showPage('emergencyPage')">📞<p>Emergencia</p></div>
+            <div class="icon" onclick="showPage('numbersPage')">📲<p>Números</p></div>
+            <div class="icon" onclick="showPage('chatPage')">💬<p>Chat Psicólogo</p></div>
+        </div>
+    </section>
+
+    <!-- Página de Zonas Peligrosas -->
+    <section class="page" id="zonesPage" style="display: none;">
+        <button onclick="goBack()">🔙 Volver</button>
+        <h2>Zonas Peligrosas</h2>
+        <ul>
+            <li>Avenida Central: Alta incidencia de robos</li>
+            <li>Parque Industrial: Zona peligrosa de noche</li>
+            <li>Mercado de Villa El Salvador: Precaución en aglomeraciones</li>
+        </ul>
+    </section>
+
+    <!-- Página de Números de Emergencia -->
+    <section class="page" id="numbersPage" style="display: none;">
+        <button onclick="goBack()">🔙 Volver</button>
+        <h2>Números de Emergencia</h2>
+        <ul>
+            <li>Serenazgo VES: <a href="tel:+51123456789">(+51) 123456789</a></li>
+            <li>Bomberos: <a href="tel:+511101">(+51) 101</a></li>
+            <li>Ambulancia: <a href="tel:+511106">(+51) 106</a></li>
+        </ul>
+    </section>
+
+    <!-- Página de Emergencia -->
+    <section class="page" id="emergencyPage" style="display: none;">
+        <button onclick="goBack()">🔙 Volver</button>
+        <h2>Contacto de Emergencia</h2>
+        <button onclick="alert('Llamando a Serenazgo...'); window.location.href='tel:+51123456789'">Contactar Serenazgo</button>
+    </section>
+
+    <!-- Página de Chat con Psicólogo -->
+    <section class="page" id="chatPage" style="display: none;">
+        <button onclick="goBack()">🔙 Volver</button>
+        <h2>Chat con Psicólogo</h2>
+        <div id="chatWindow">
+            <div id="chatMessages"></div>
+            <input type="text" id="chatInput" placeholder="Escribe tu mensaje aquí...">
+            <button id="sendMessageButton">Enviar</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
